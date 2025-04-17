@@ -6,10 +6,41 @@ import pandas as pd
 
 # TODO: CREATE APPROPRIATE CSV FILES RATHER THAN PRINTING. Target location: output/tables
 def main():
+    # Create output directories
+    Path('output/figures').mkdir(parents=True, exist_ok=True)
+    Path('output/tables').mkdir(parents=True, exist_ok=True)
+    
+    # Load data
+    print("Loading data...")
+    cso_df, sps_a1_df, sps_a2_df, rainfall_df = load_data("data/DataChallengeData2025.xlsx")
+    
+    # Analyse CSO data
+    print("\nAnalyzing CSO data...")
+    cso_analysis = analyse_cso_data(cso_df)
+    
+    # Analyse SPS data
+    print("Analyzing SPS_A1 data...")
+    sps_a1_analysis = analyse_sps_data(sps_a1_df, 'SPS_A1')
+    print("Analyzing SPS_A2 data...")
+    sps_a2_analysis = analyse_sps_data(sps_a2_df, 'SPS_A2')
+    
+    # Analyse rainfall data
+    print("Analyzing rainfall data...")
+    rainfall_analysis = analyse_rainfall_data(rainfall_df)
+
+    # Create missing values summary table
+    analyses = {
+        'CSO': cso_analysis,
+        'SPS_A1': sps_a1_analysis,
+        'SPS_A2': sps_a2_analysis,
+        'Rainfall': rainfall_analysis
+    }
+    missing_values_table = create_missing_values_table(analyses)
+
     print("\n" + "="*80)
     print("DATA QUALITY REPORT")
     print("="*80)
-    
+
     for dataset_name, analysis in analyses.items():
         print(f"\n{dataset_name} DATA QUALITY")
         print("-"*40)
@@ -58,37 +89,6 @@ def main():
             print(f"  Missing Days: {temporal['Missing Dates']}")
     
     print("\n" + "="*80)
-
-    # Create output directories
-    Path('output/figures').mkdir(parents=True, exist_ok=True)
-    Path('output/tables').mkdir(parents=True, exist_ok=True)
-    
-    # Load data
-    print("Loading data...")
-    cso_df, sps_a1_df, sps_a2_df, rainfall_df = load_data("data/DataChallengeData2025.xlsx")
-    
-    # Analyse CSO data
-    print("\nAnalyzing CSO data...")
-    cso_analysis = analyse_cso_data(cso_df)
-    
-    # Analyse SPS data
-    print("Analyzing SPS_A1 data...")
-    sps_a1_analysis = analyse_sps_data(sps_a1_df, 'SPS_A1')
-    print("Analyzing SPS_A2 data...")
-    sps_a2_analysis = analyse_sps_data(sps_a2_df, 'SPS_A2')
-    
-    # Analyse rainfall data
-    print("Analyzing rainfall data...")
-    rainfall_analysis = analyse_rainfall_data(rainfall_df)
-    
-    # Create missing values summary table
-    analyses = {
-        'CSO': cso_analysis,
-        'SPS_A1': sps_a1_analysis,
-        'SPS_A2': sps_a2_analysis,
-        'Rainfall': rainfall_analysis
-    }
-    missing_values_table = create_missing_values_table(analyses)
     
     # # Create data type distribution visualisations
     # print("\nGenerating data type distribution visualisations...")
