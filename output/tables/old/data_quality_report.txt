@@ -1,0 +1,91 @@
+DATA QUALITY ASSESSMENT REPORT
+=============================
+
+CSO Data Analysis
+----------------
+Missing Values:
+          Missing Values  Percentage
+Site                   0         0.0
+DateTime               0         0.0
+Level                  0         0.0
+
+Temporal Coverage:
+Start Date: 2017-04-01 00:00:00
+End Date: 2018-04-01 00:00:00
+Total Days: 366
+Total Entries: 525600
+Unique Days: 366
+Missing Dates: 0
+
+Outlier Count: {cso_analysis['outlier_count']}
+Outlier Percentage: 4.28%
+
+SPS Data Analysis
+----------------
+Missing Values:
+           Missing Values  Percentage
+Site                    0         0.0
+Timestamp               0         0.0
+Status                  0         0.0
+StateDesc               0         0.0
+
+Temporal Coverage:
+Start Date: 2017-04-20 14:54:54
+End Date: 2018-03-31 23:47:49
+Total Days: 346
+Total Entries: 1466
+Unique Days: 80
+Missing Dates: 266
+
+Status Changes:
+Site    Status
+SPS_A1  0         733
+        1         733
+Name: count, dtype: int64
+
+Running Periods:
+       Timestamp                                        
+           count                 min                 max
+Site                                                    
+SPS_A1       733 2017-04-20 14:54:54 2018-03-31 23:44:31
+
+SPS_A2 Data Analysis
+-----------------
+Missing Values:
+           Missing Values  Percentage
+Site                    0         0.0
+Timestamp               0         0.0
+Status                  0         0.0
+StateDesc               0         0.0
+
+Temporal Coverage:
+Start Date: 2017-04-20 14:55:34
+End Date: 2018-03-31 23:59:32
+Total Days: 346
+Total Entries: 1464
+Unique Days: 77
+Missing Dates: 269
+
+Status Changes:
+Site    Status
+SPS_A2  0         732
+        1         732
+Name: count, dtype: int64
+
+Rainfall Data Analysis
+---------------------
+Missing Values:
+      Missing Values  Percentage
+time               0         0.0
+RG_A               0         0.0
+
+Temporal Coverage:
+Start Date: 2017-06-10 00:00:00
+End Date: 2018-04-01 00:00:00
+Total Days: 296
+Total Entries: 28320
+Unique Days: 296
+Missing Dates: 0
+
+Zero Rainfall Count: 26390
+Zero Rainfall Percentage: 93.19%

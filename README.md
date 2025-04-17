@@ -4,15 +4,32 @@ This repository contains code for the Stantec Data Challenge 2025.
 
 ## Project Overview
 
-This project analyzes CSO (Combined Sewer Overflow), sewage pump station (SPS), and rainfall data.
+This project analyses CSO (Combined Sewer Overflow), sewage pump station (SPS), and rainfall data.
 
 ## Data
 
-The project uses the following data sources:
-- CSO_A: Combined Sewer Overflow data
-- SPS_A1: Sewage Pump Station A1 data
-- SPS_A2: Sewage Pump Station A2 data
-- RG_A: Rainfall data
+This analysis explores potential relationships between:
+- Rainfall and CSO level spikes
+- Pump activations and potential spill events
+- False positive spill signals caused by quick pump response
+- Temporal and categorical patterns in event data
+
+It includes:
+- Data quality assessment (missing values, outliers, temporal coverage)
+- Visualisation of CSO levels, pump events, and rainfall over time
+- Correlation plots between rainfall, CSO, and SPS activity
+- Detection of potential false spill events based on level thresholds and pump timings
+
+## Data Sources
+
+The project uses the following sheets from the provided Excel workbook:
+
+| Sheet      | Description                                 |
+|------------|---------------------------------------------|
+| `CSO_A`    | Combined Sewer Overflow level readings      |
+| `SPS_A1`   | Pump Station A1 events (RUNNING / STOPPED)  |
+| `SPS_A2`   | Pump Station A2 events                      |
+| `RG_A`     | Rainfall intensity data (in mm)             |
 
 ## Setup
 
@@ -25,11 +42,11 @@ The project uses the following data sources:
 
 ## Usage
 
-Run the data extraction script:
+Run the full analysis pipeline:
 ```
-python extract.py
+python main.py
 ```
 
 ## License
 
-[Add your license information here] 
+[] 
