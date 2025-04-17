@@ -26,10 +26,10 @@ The project uses the following sheets from the provided Excel workbook:
 
 | Sheet      | Description                                 |
 |------------|---------------------------------------------|
-| `CSO_A`    | Combined Sewer Overflow level readings      |
-| `SPS_A1`   | Pump Station A1 events (RUNNING / STOPPED)  |
-| `SPS_A2`   | Pump Station A2 events                      |
 | `RG_A`     | Rainfall intensity data (in mm)             |
+| `CSO_A`    | Combined Sewer Overflow level readings      |
+| `SPS_A1`   | Pump Station A1 events                      |
+| `SPS_A2`   | Pump Station A2 events                      |
 
 ## Setup
 
@@ -49,4 +49,4 @@ python main.py
 
 ## License
 
-[] 
+[N/A] 
